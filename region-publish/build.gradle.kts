@@ -34,7 +34,7 @@ publishing {
 
 mavenPublishing {
     pom {
-        name.set("Minecraft Stat")
+        name.set("Minecraft Region")
         description.set("Team, Palimp.")
         url.set("https://github.com/jeongtaehanim/${rootProject.name}")
 
