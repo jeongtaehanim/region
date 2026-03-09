@@ -1,0 +1,22 @@
+[versions]
+kotlin = "2.3.0"
+dokka = "1.9.20"
+publish = "0.33.0"
+paper = "1.21.11-R0.1-SNAPSHOT"
+paperweight = "1.7.7"
+command = "11.1.0"
+serialization = "2.3.0"
+serializationLib = "1.10.0"
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+publish = { id = "com.vanniktech.maven.publish", version.ref = "publish" }
+paperweight = { id = "io.papermc.paperweight.userdev", version.ref = "paperweight" }
+serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "serialization" }
+
+[libraries]
+paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+command = { group = "dev.jorel", name = "commandapi-paper-core", version.ref = "command" }
+serializationJson = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "serializationLib" }
+serializationProtobuf = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf", version.ref = "serializationLib" }
