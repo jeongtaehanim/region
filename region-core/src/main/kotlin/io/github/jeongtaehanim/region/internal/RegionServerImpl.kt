@@ -1,5 +1,6 @@
 package io.github.jeongtaehanim.region.internal
 
+import io.github.jeongtaehanim.region.RegionEvent
 import io.github.jeongtaehanim.region.RegionPrivilegeResolver
 import io.github.jeongtaehanim.region.RegionServer
 import org.bukkit.Bukkit
@@ -37,7 +38,7 @@ class RegionServerImpl(private val plugin: JavaPlugin) : RegionServer {
         privilegeResolvers += resolver
     }
 
-    fun isPrivileged(uniqueId: UUID, region: ChunkRegionImpl): Boolean {
+    fun isPrivileged(uniqueId: UUID, region: ChunkRegionImpl, event: RegionEvent? = null): Boolean {
         val o = region.owner
         if (o != null && o == uniqueId) {
             return true
@@ -47,7 +48,7 @@ class RegionServerImpl(private val plugin: JavaPlugin) : RegionServer {
                 return true
             }
         }
-        return privilegeResolvers.any { it.isPrivileged(uniqueId, region) }
+        return privilegeResolvers.any { it.isPrivileged(uniqueId, region, event) }
     }
 
     override fun save() {
